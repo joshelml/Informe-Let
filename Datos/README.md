@@ -1,12 +1,17 @@
-# Proyecto
+# Bases de Datos
 
-### Contenido de cada carpeta:
-* Datos: Contendrá los datos utilizados para la creación del informe
+### Bases de datos utilizadas (puede variar):
 
-* Codigos: Contendrá los códigos utilizados, ya sea, para limpiar la base de datos o realizar los gráficos, tablas, resúmenes estadísticos, etc.
+* https://www.wada-ama.org/sites/default/files/resources/files/2018_adrv_report.pdf
 
-* Imágenes: Contendrá los gráficos.
+* https://www.wada-ama.org/sites/default/files/resources/files/2017_adrv_report.pdf
 
-* Resultados: Contendrá los resúmenes de datos que serán utilizados para las conclusiónes del informe.
+* https://www.wada-ama.org/sites/default/files/resources/files/2016_adrvs_report_web_release_april_2018_0.pdf
 
-* Informe: Contendrá el resultado final del informe.
+* https://www.wada-ama.org/sites/default/files/resources/files/2015_adrvs_report_web_release_0.pdf
+
+* https://www.wada-ama.org/sites/default/files/resources/files/wada-2014-adrv-report-en_0.pdf
+
+* https://www.wada-ama.org/sites/default/files/resources/files/wada-2013-adrv-report-en.pdf
+
+* Nota: Entre 2011 y 2015 Rusia suministro sustancias dopantes, por lo que haré un analisis entre varios años.
