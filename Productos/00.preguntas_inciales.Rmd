@@ -1,0 +1,16 @@
+---
+title: "Preguntas iniciales"
+author: "Josefa Silva"
+output: html_document
+---
+
+¿Cuál es el país con mayor porcentaje de dopaje?
+
+¿Cómo fue incrementando o disminuyendo le porcentaje de dopaje de cada país a lo largo de los años? 
+
+¿Cuál es el deporte que presenta mayor casos? 
+
+¿Hay alguna razon por el cual es el deporte con mayor casos de dopaje?
+
+¿Qué sexo se dopa más?
+
