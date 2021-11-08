@@ -10,11 +10,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 El dopaje es un tema de interés general, tiende a ser una opción utilizada por algunos atletas para mejorar su rendimiento deportivo sin tomar consecuencias 
-sobre los efectos negativos que provoca en la salud;y, por otra parte, consituye 
+sobre los efectos negativos que provoca en la salud;y que además, consituye 
 un problema de índole ético, político y social que manchan los deportes.
 
-En el último reporte dictado por la Agencia nacional antidoping (AMA) revelan, como se puede apreciar en la figura, que de un total de 263.519 casos que fueron recolectados por la ADOs en 2018, 2.771 casos fueron reportados como un hallazgo analítico adverso, en donde entre los diez deportes con mayor casos porcentaje de violaciones a las reglas 
-en antidopaje lidera el  culturismo, con 261 (21%) seguido muy de cerca por el ciclismo,  con 221 (17%); el atletismo, con 193 (15%); el powerlifting, con 164 (13%); la halterofilia, con 157 (12 %); la lucha, con 67 (5%); el rugby, con 57 (5%); el boxeo, con 57 (5 %); el fútbol, con 56 (4%); y la natación, con 39 (3%)
+En el último reporte dictado por la Agencia mundial antidoping (WADA) revelan, como se puede apreciar en la figura, que de un total de 263.519 casos que fueron recolectados por la ADOs en 2018, 2.771 casos fueron reportados como un hallazgo analítico adverso, en donde entre los diez deportes con mayor casos de porcentaje en violaciones a las reglas 
+del antidopaje lidera el  culturismo, con 261 (21%) seguido muy de cerca por el ciclismo,  con 221 (17%); el atletismo, con 193 (15%); el powerlifting, con 164 (13%); la halterofilia, con 157 (12 %); la lucha, con 67 (5%); el rugby, con 57 (5%); el boxeo, con 57 (5 %); el fútbol, con 56 (4%); y la natación, con 39 (3%)
 
 ```{r include=FALSE}
 library(ggplot2)
