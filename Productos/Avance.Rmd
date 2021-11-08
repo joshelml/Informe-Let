@@ -1,0 +1,65 @@
+---
+title: "Avance"
+author: "Josefa Silva"
+date: "11/7/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+El dopaje es un tema de interés general, tiende a ser una opción utilizada por algunos atletas para mejorar su rendimiento deportivo sin tomar consecuencias 
+sobre los efectos negativos que provoca en la salud;y, por otra parte, consituye 
+un problema de índole ético, político y social que manchan los deportes.
+
+En el último reporte dictado por la Agencia nacional antidoping (AMA) revelan, como se puede apreciar en la figura, que de un total de 263.519 casos que fueron recolectados por la ADOs en 2018, 2.771 casos fueron reportados como un hallazgo analítico adverso, en donde entre los diez deportes con mayor casos porcentaje de violaciones a las reglas 
+en antidopaje lidera el  culturismo, con 261 (21%) seguido muy de cerca por el ciclismo,  con 221 (17%); el atletismo, con 193 (15%); el powerlifting, con 164 (13%); la halterofilia, con 157 (12 %); la lucha, con 67 (5%); el rugby, con 57 (5%); el boxeo, con 57 (5 %); el fútbol, con 56 (4%); y la natación, con 39 (3%)
+
+```{r include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(gapminder)
+library(gghighlight)
+require(tidyverse)
+library(countrycode)
+library(ggrepel)
+
+sport = read_delim('/Users/josefasilva/Informe-Let/Datos/Sport.csv')
+
+outcomes = read_delim('/Users/josefasilva/Informe-Let/Datos/outcomes.csv')
+```
+
+
+
+```{r pressure, echo=FALSE}
+sport %>% 
+  ggplot(aes(x = Sport, y = Cases)) +
+  geom_col(fill = "pink") +
+  theme_minimal() +
+  ggtitle("Total ADRVs-Top 10 sports")+
+       ylab("Cases")+
+       xlab( NULL) +
+    geom_text_repel(aes(label = Cases))
+
+
+
+```
+
+Las cifras descritas anteriormente invitan a reflexionar sobre la situación acual
+que esta viviendo el deporte en el ámbito mundial, pues estas en estas cifras sno están siendo considerados los casos pendientes (316), no sancionados (101), negativos (381) o por razones médicas (333) (en el cual facilmente se podría falsificar la documentación) como lo describe la siguiente figura:
+
+```{r  echo=FALSE}
+
+outcomes %>% 
+  ggplot(aes(x = samples, y = cases)) +
+  geom_col(fill = "pink") +
+  theme_minimal() +
+  ggtitle("Outcomes by AAF")+
+  ylab('Cases')+
+  xlab( NULL) +
+  geom_text_repel(aes(label = cases))
+
+
+```
+
