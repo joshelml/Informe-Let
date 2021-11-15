@@ -39,7 +39,8 @@ ADRV =  read_delim('/Users/josefasilva/Informe-Let/Datos/ADRV.csv')
 options(knitr.duplicate.label = "allow")
 ggplot(deportes, aes(x = Sport, y = Cases, group = ano))+
 geom_col(aes(fill = ano), position = "dodge") + coord_flip()+
-guides(fill = guide_legend(title = "Año")) +ggtitle ("Violaciones de las reglas antidojape entre los años 2014-2018 \n Top 10 deportes ")+
+guides(fill = guide_legend(title = "Año")) +ggtitle ("Violaciones de las reglas antidojape entre los años 2014-2018 \n Top 10 deportes ")+ 
+  theme(plot.title = element_text(hjust = 0.5)) +
 labs(x = "Deportes",y = "Casos") 
 
 ```
@@ -59,7 +60,8 @@ Las cifras descritas anteriormente invitan a reflexionar sobre la situación acu
 ```{r pressure , echo=FALSE}
 ggplot(ADRV, aes(x = samples, y = cases, group = ano))+
 geom_col(aes(fill = ano), position = "dodge") + coord_flip()+
-guides(fill = guide_legend(title = "Año")) + ggtitle ("Resultados analíticos adversos (AAF) entre los años 2014-2018")
+guides(fill = guide_legend(title = "Año")) + ggtitle ("Resultados analíticos adversos (AAF) entre los años \n 2014-2018") +
+theme(plot.title = element_text(hjust = 0.5))
 ```
 
 Sumando todos esos casos, la cantidad aumenta drásticamente haciendo un llamado de emergencia hacia las federaciones y agencias antidoping.
@@ -71,7 +73,8 @@ De los reportes entregados por la AMA, Rusia es el país que  tiende a liderar l
 ```{r pais , echo=FALSE}
 ggplot(paises, aes(x=pais, y = casos, group = ano))+
 geom_col(aes(fill = ano), position = "dodge") + coord_flip()+
-guides(fill = guide_legend(title = "Año")) + ggtitle ("Violaciones de las reglas antidojape entre los años 2014-2018 \n Top 8 Naciones ")
+guides(fill = guide_legend(title = "Año")) + ggtitle ("Violaciones de las reglas antidojape entre los años 2014-2018 \n Top 8 Naciones ") +
+theme(plot.title = element_text(hjust = 0.5))
 ```
 
 #aun no se como contextualizar lo siguiente
