@@ -1,0 +1,88 @@
+---
+title: "El lado oscuro de los deportes."
+author: "Josefa Silva"
+output: html_document
+---
+
+El dopaje es el uso de sustancias o métodos prohibidos para mejorar el rendimiento deportivo, retrasar la aparición del agotamiento y estimulas la recuperación tras el esfuerzo, siendo un acto consiente y voluntaria del deportiasta. El dopaje es inmoral, pues se obtienen triunfos deportivos utilizando medios prohibidos.
+
+Cada vez surgen más casos de dopaje o presunto dopaje entre deportistas conocidos, los cuales saltan cada vez con más frecuencia a las portadas de los medios de comunicación. El dopaje es una vergüenza para el deporte y se trata de una paractica dificil de erradicar, es  poco ética y muy peligrosa para la salud de los deportistas.
+
+Año a año aumentan los casos en casi todos los países del mundo, lo que nos hace plantearnos varias preguntas, ¿Qué deporte tiende a tener más casos de dopaje? ¿Hay alguna razon?, ¿Todos los casos son sancionados?, ¿Existirá un país que lidere esta carrera deshonesta?, Dicho país ¿Tendrá algún motivo para optar por dopar a sus deportistas?
+
+
+La Agencia Mundial Antidopaje (AMA) anualmente entrega reportes sobre los casos de dopaje, lo que nos ayudará a responder nuestras preguntas principales de este informe. Primero realizaremos una comparación entre 2014 hasta 2018 para relaizar un contraste con la cantidad de casos de dopaje y ver su evolución. Teniendo en cuenta los países, deportes y casos no considerados. Posteriormente nos iremos a un lado más politico para poder entender las razones del país con más casos de dopaje y por último resumiremos lo explicado durante este informe.
+
+Primero que todo, nos debemos cuestinar de forma general ¿Por qué los deportistas se dopan?, principalmente existen tres motivaciones: Por la victoria, es el objetivo del deporte competitivo y por ella se sacrifican tiempo, estudios, parte de la vida; por el dinero, en el alto rentimiendo, el deporte deja de ser un hobbit y se convierte en un trabajo, por lo que su vida depende de ello; y por no estar en inferioridad de condiciones.
+
+En los últimos reportes dictado por la AMA revelan, como se puede apreciar en el gráfico, que de los casos que fueron recolectados por la Organización Anti-doping (ADOs) entre los años 2014 - 2018, entre los diez deportes con mayor casos de porcentaje en violaciones a las reglas 
+del antidopaje lidera el  culturismo (Bodybuilding), seguido muy de cerca por el ciclismo (Cycling),  posteriormente se encuentran el atletismo (Athletics), el powerlifting (Powerlifting), la halterofilia (Weightlifting),  la lucha (Wrestling), el rugby, el boxeo (Boxing), el fútbol, y por último la natación (Aquatics).
+
+
+```{r include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(gapminder)
+library(gghighlight)
+require(tidyverse)
+library(countrycode)
+library(ggrepel)
+
+paises = read_delim('/Users/josefasilva/Informe-Let/Datos/paises.csv')
+deportes = read_delim('/Users/josefasilva/Informe-Let/Datos/deportes.csv')
+ADRV =  read_delim('/Users/josefasilva/Informe-Let/Datos/ADRV.csv')
+
+```
+
+
+```{r pressure, echo=FALSE}
+options(knitr.duplicate.label = "allow")
+ggplot(deportes, aes(x = Sport, y = Cases, group = ano))+
+geom_col(aes(fill = ano), position = "dodge") + coord_flip()+
+guides(fill = guide_legend(title = "Año")) +ggtitle ("Violaciones de las reglas antidojape entre los años 2014-2018 \n Top 10 deportes ")+
+labs(x = "Deportes",y = "Casos") 
+
+```
+
+Como podemos observar en el gráfico tenemos dos casos:
+Por un lado, entre los deportes NO olimpicos ¿Por qué el culturismo lidera los casos? Debido a que el culturismo se basa en obtener un cuerpo descomunal, por el tamaño y el volumen de los musculos, tal acto es  humanamente imposible conseguirlo de forma natural, ya que, el cuerpo tiene un límite el cual se supera cuando se utilizan sustancias.
+
+Y por el otro, entre los deportes olimpicos ¿Por qué el atletismo y ciclismo lo hacen? En el alto rendimiento existe una igualdad competitiva, es decir, las medallas se ganan con diferencia mínima de décimas de segundos, lo que produce a que los deportistas tomen medidas desesperadas para lograr el triunfo, y consigo elijan camino más fácil que es el dopaje: 
+
+En primer lugar tenemos el consumo de sustancias prohibidas como esteroides anabolizantes, los agonistas, los moduladores hormonales y los diuréticos, los cuales producen en el cuerpo humano un aumento en el rendimiento debido a que ejercen un estímulo sobre el sistema cardiomuscular y nervioso, y en el caso de las hormonas de crecimiento, tienen un efecto sobre la densidad muscular, la densidad ósea y aumenta la cantidad de glóbulos rojos lo que conlleva a que se incremente la entrega de oxígenoa los músculos.
+
+y en segundo lugar tenemos los métodos  prohibidos como la manipulación de sangre y sus componentes sanguíneos, la manipulación química y física, y el dopaje genéticoque, lo que alteran ciertas reacciones para lograr una ventaja en la sintesis de proteínas, de carbohifratos y en la producción de energía.
+Todo lo descrito antiormente aumenta potencialmente el rendimiento deportivo asegurando una victoria.
+
+Las cifras descritas anteriormente invitan a reflexionar sobre la situación acual que esta viviendo el deporte en el ámbito mundial, pues en estas cifras no están siendo considerados los casos pendientes, no sancionados, o por razones médicas (en el cual facilmente se podría falsificar la documentación) como lo describe la siguiente figura:
+
+```{r pressure , echo=FALSE}
+ggplot(ADRV, aes(x = samples, y = cases, group = ano))+
+geom_col(aes(fill = ano), position = "dodge") + coord_flip()+
+guides(fill = guide_legend(title = "Año")) + ggtitle ("Resultados analíticos adversos (AAF) entre los años 2014-2018")
+```
+
+Sumando todos esos casos, la cantidad aumenta drásticamente haciendo un llamado de emergencia hacia las federaciones y agencias antidoping.
+
+
+Ahora, analizaremos que países lideran el dopaje y cual es su razón para dopar a sus deportistas.
+De los reportes entregados por la AMA, Rusia es el país que  tiende a liderar los casos de dopaje, sin embargo, como se observa en el gráfico, Italia lo sigue muy de cerca:
+
+```{r pais , echo=FALSE}
+ggplot(paises, aes(x=pais, y = casos, group = ano))+
+geom_col(aes(fill = ano), position = "dodge") + coord_flip()+
+guides(fill = guide_legend(title = "Año")) + ggtitle ("Violaciones de las reglas antidojape entre los años 2014-2018 \n Top 8 Naciones ")
+```
+
+#aun no se como contextualizar lo siguiente
+"colocar contexto historico"
+
+Como se puede observar, entre los años 2014 y 2015, Rusia lideró los casos de dopaje, lo cual levanto sospechas a nivel mundial. La emisora alemana ARD emitió un domcumental bajo el nombre: "Dossier secreto dopaje: cómo fabrica Rusia a sus campeones", donde denuncia un proceso sistemático de los atletas rusos y el encubrimiento de las autoridades a los controles. 
+
+Después de tal escándalo la AMA inició una investigación en el 2015 y a finales del 2019 fueron confirmados el sistema que tenía Rusia en donde existia una manipulación de datos de los laboratorios, que impidió comprobar cerca de la mitad de los casi 300 casos sospechosos de dopaje en deportistas ruso.
+
+
+
+
+
+
